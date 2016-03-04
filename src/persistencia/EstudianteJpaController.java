@@ -32,7 +32,7 @@ public class EstudianteJpaController implements Serializable {
     }
     
     public EstudianteJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("Taller1JavaWebPU");
+        this.emf = Persistence.createEntityManagerFactory("Taller2JavaWebPU");
     }
     
     private EntityManagerFactory emf = null;

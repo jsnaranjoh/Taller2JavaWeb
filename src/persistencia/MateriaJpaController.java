@@ -34,7 +34,7 @@ public class MateriaJpaController implements Serializable {
     }
     
     public MateriaJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("Taller1JavaWebPU");
+        this.emf = Persistence.createEntityManagerFactory("Taller2JavaWebPU");
     }
     
     private EntityManagerFactory emf = null;

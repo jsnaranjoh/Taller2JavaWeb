@@ -32,7 +32,7 @@ public class CarreraJpaController implements Serializable {
     private EntityManagerFactory emf = null;
 
     public CarreraJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("Taller1JavaWebPU");
+        this.emf = Persistence.createEntityManagerFactory("Taller2JavaWebPU");
     }
 
     public EntityManager getEntityManager() {

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import modelo.Docente;
 import persistencia.exceptions.NonexistentEntityException;
 import persistencia.exceptions.PreexistingEntityException;
@@ -30,6 +31,10 @@ public class DocenteJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
 
+    public DocenteJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("Taller2JavaWebPU");
+    }
+    
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }

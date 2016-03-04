@@ -32,7 +32,7 @@ public class MatriculaJpaController implements Serializable {
     }
     
     public MatriculaJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("Taller1JavaWebPU");
+        this.emf = Persistence.createEntityManagerFactory("Taller2JavaWebPU");
     }
     
     private EntityManagerFactory emf = null;
