@@ -214,4 +214,34 @@ public class MatriculaJpaController implements Serializable {
         }
     }
     
+    // Consulta las materias que el estudiante haya desaprobado
+    public List<String> consultardesaprobados(Long documentoestudiante)
+    {
+        String consulta = "SELECT ma.numeromateria.nombremateria FROM matricula ma WHERE" + 
+                    "ma.documentoestudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado LIKE 'DES%'";
+        
+        Query query = this.getEntityManager().createQuery(consulta);
+        return query.getResultList();
+    }
+    
+    // Calcula el promedio de todas las materias de una carrera
+    public Double promedioestudiantesxcarrera(String nombrecarrera)
+    {
+        String consulta = "SELECT AVG(ma.nota) FROM matricula ma WHERE" +
+            "ma.numeromateria.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
+        
+        Query query = this.getEntityManager().createQuery(consulta);
+        return (Double) query.getSingleResult();
+    }
+
+    // Consulta las materias que se dan en un semestre y una carrera determinada
+    public List<String> consultarmateriasxsemxcar(Integer semestre, String nombrecarrera)
+    {
+        String  consulta = "SELECT ma.numeromateria.nombremateria FROM matricula ma WHERE" +
+            "ma.documentoestudiante.semestreestudiante = " + semestre + " AND" + 
+                    "ma.numeromateria.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
+        
+        Query query = this.getEntityManager().createQuery(consulta);
+        return query.getResultList();
+    }    
 }
