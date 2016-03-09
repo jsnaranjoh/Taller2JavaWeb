@@ -134,7 +134,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         VistaMateria vistaMateria = new VistaMateria();
-        vistaMateria.setSize(425, 460);
+        vistaMateria.setSize(700, 500);
         vistaMateria.setLocation(0, 0);
         
         panelPrincipal.removeAll();
