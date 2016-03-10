@@ -218,7 +218,7 @@ public class MatriculaJpaController implements Serializable {
     public List<String> consultarDesaprobados(Long documentoestudiante)
     {
         String consulta = "SELECT ma.materia.nombremateria FROM Matricula ma WHERE " + 
-                    "ma.estudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado LIKE 'DES%'";
+                    "ma.estudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado = 'DESAPROBADO'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return query.getResultList();
@@ -228,7 +228,7 @@ public class MatriculaJpaController implements Serializable {
     public Double promedioEstudiantesxCarrera(String nombrecarrera)
     {
         String consulta = "SELECT AVG(ma.nota) FROM Matricula ma WHERE " +
-            "ma.materia.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
+            "ma.materia.numerocarrera.nombrecarrera = '" + nombrecarrera + "'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return (Double) query.getSingleResult();
@@ -239,7 +239,7 @@ public class MatriculaJpaController implements Serializable {
     {
         String  consulta = "SELECT ma.materia.nombremateria FROM Matricula ma WHERE " +
             "ma.estudiante.semestreestudiante = " + semestre + " AND " + 
-                    "ma.materia.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
+                    "ma.materia.numerocarrera.nombrecarrera = '" + nombrecarrera + "'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return query.getResultList();
