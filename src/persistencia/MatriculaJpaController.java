@@ -215,7 +215,7 @@ public class MatriculaJpaController implements Serializable {
     }
     
     // Consulta las materias que el estudiante haya desaprobado
-    public List<String> consultardesaprobados(Long documentoestudiante)
+    public List<String> consultarDesaprobados(Long documentoestudiante)
     {
         String consulta = "SELECT ma.numeromateria.nombremateria FROM Matricula ma WHERE " + 
                     "ma.documentoestudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado LIKE 'DES%'";
@@ -225,7 +225,7 @@ public class MatriculaJpaController implements Serializable {
     }
     
     // Calcula el promedio de todas las materias de una carrera
-    public Double promedioestudiantesxcarrera(String nombrecarrera)
+    public Double promedioEstudiantesxCarrera(String nombrecarrera)
     {
         String consulta = "SELECT AVG(ma.nota) FROM Matricula ma WHERE " +
             "ma.numeromateria.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
@@ -235,7 +235,7 @@ public class MatriculaJpaController implements Serializable {
     }
 
     // Consulta las materias que se dan en un semestre y una carrera determinada
-    public List<String> consultarmateriasxsemxcar(Integer semestre, String nombrecarrera)
+    public List<String> consultarMateriasxSemxCarr(Integer semestre, String nombrecarrera)
     {
         String  consulta = "SELECT ma.numeromateria.nombremateria FROM Matricula ma WHERE " +
             "ma.documentoestudiante.semestreestudiante = " + semestre + " AND " + 

@@ -486,7 +486,7 @@ public class VistaMatricula extends javax.swing.JPanel {
         
         MatriculaJpaController controladorMatricula = new MatriculaJpaController();
         Long idEstudiante = Long.parseLong(jTextField1.getText());
-        List<String> listaMaterias = controladorMatricula.consultardesaprobados(idEstudiante);
+        List<String> listaMaterias = controladorMatricula.consultarDesaprobados(idEstudiante);
         
         if(listaMaterias.isEmpty()){
             this.jTextArea1.setText("No se encontraron registros.");

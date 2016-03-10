@@ -282,7 +282,7 @@ public class MateriaJpaController implements Serializable {
     }
 
     // Consulta las materias que tengan máximo 4 créditos
-    public List<String> consultarmaterias()
+    public List<String> consultarMaterias()
     {
         String consulta = "SELECTE m.nombremateria FROM materia m WHERE m.creditosmateria <= 4";
         
@@ -291,7 +291,7 @@ public class MateriaJpaController implements Serializable {
     }
     
     // Consulta las materias que dicta un docente en una carrera determinada
-    public List<String> consultarmateriasxdocxcar(String nombredocente, String nombrecarrera)
+    public List<String> consultarMateriasxDocxCarr(String nombredocente, String nombrecarrera)
     {
 	String consulta = "SELECT m.nombremateria FROM Materia m INNER JOIN m.docenteList d WHERE " +
                             "d.nombredocente LIKE '%" + nombredocente +"%' AND " +
