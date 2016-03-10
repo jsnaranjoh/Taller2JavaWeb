@@ -284,7 +284,7 @@ public class MateriaJpaController implements Serializable {
     // Consulta las materias que tengan máximo 4 créditos
     public List<String> consultarMaterias()
     {
-        String consulta = "SELECTE m.nombremateria FROM materia m WHERE m.creditosmateria <= 4";
+        String consulta = "SELECT m.nombremateria FROM materia m WHERE m.creditosmateria <= 4";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return query.getResultList();

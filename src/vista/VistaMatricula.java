@@ -185,6 +185,11 @@ public class VistaMatricula extends javax.swing.JPanel {
         jLabel10.setText("Consultar promedio de materias por carrera");
 
         jButton7.setText("Consultar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Limpiar");
 
@@ -196,6 +201,11 @@ public class VistaMatricula extends javax.swing.JPanel {
         jLabel13.setText("Nombre carrera");
 
         jButton9.setText("Consultar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Limpiar");
 
@@ -497,6 +507,34 @@ public class VistaMatricula extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    // Botón para consultar el promedio de notas de todas las materias de una determinada carrera
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        
+        MatriculaJpaController controladorMatricula = new MatriculaJpaController();
+        String carrera = jTextField3.getText();
+        Double promedio = controladorMatricula.promedioEstudiantesxCarrera(carrera);
+        
+        this.jTextArea1.setText(promedio.toString());
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    // Botón para consultar todas las materias que se dan en un semestre de una carrera determinada
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        MatriculaJpaController controladorMatricula = new MatriculaJpaController();
+        Integer semestre = Integer.parseInt(jTextField6.getText());
+        String carrera = jTextField7.getText();
+        
+        List<String> listaMaterias = controladorMatricula.consultarMateriasxSemxCarr(semestre, carrera);
+        
+        if(listaMaterias.isEmpty()){
+            this.jTextArea1.setText("No se encontraron registros.");
+        }
+        else{
+            for(String s: listaMaterias){
+                this.jTextArea1.append(s + " \n");           
+            }
+        }        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

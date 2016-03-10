@@ -217,8 +217,8 @@ public class MatriculaJpaController implements Serializable {
     // Consulta las materias que el estudiante haya desaprobado
     public List<String> consultarDesaprobados(Long documentoestudiante)
     {
-        String consulta = "SELECT ma.numeromateria.nombremateria FROM Matricula ma WHERE " + 
-                    "ma.documentoestudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado LIKE 'DES%'";
+        String consulta = "SELECT ma.materia.nombremateria FROM Matricula ma WHERE " + 
+                    "ma.estudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado LIKE 'DES%'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return query.getResultList();
@@ -228,7 +228,7 @@ public class MatriculaJpaController implements Serializable {
     public Double promedioEstudiantesxCarrera(String nombrecarrera)
     {
         String consulta = "SELECT AVG(ma.nota) FROM Matricula ma WHERE " +
-            "ma.numeromateria.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
+            "ma.materia.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return (Double) query.getSingleResult();
@@ -237,9 +237,9 @@ public class MatriculaJpaController implements Serializable {
     // Consulta las materias que se dan en un semestre y una carrera determinada
     public List<String> consultarMateriasxSemxCarr(Integer semestre, String nombrecarrera)
     {
-        String  consulta = "SELECT ma.numeromateria.nombremateria FROM Matricula ma WHERE " +
-            "ma.documentoestudiante.semestreestudiante = " + semestre + " AND " + 
-                    "ma.numeromateria.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
+        String  consulta = "SELECT ma.materia.nombremateria FROM Matricula ma WHERE " +
+            "ma.estudiante.semestreestudiante = " + semestre + " AND " + 
+                    "ma.materia.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera + "%'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return query.getResultList();
