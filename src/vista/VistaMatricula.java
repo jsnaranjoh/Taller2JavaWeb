@@ -168,6 +168,11 @@ public class VistaMatricula extends javax.swing.JPanel {
         jLabel1.setText("No. Documento Estudiante");
 
         jButton5.setText("Consultar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Nombre carrera");
 
@@ -288,7 +293,6 @@ public class VistaMatricula extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -476,6 +480,23 @@ public class VistaMatricula extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "El estudiante no ha matriculado esta materia.");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    // Botón para consultar las materias desaprobadas por un estudiante
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
+        MatriculaJpaController controladorMatricula = new MatriculaJpaController();
+        Long idEstudiante = Long.parseLong(jTextField1.getText());
+        List<String> listaMaterias = controladorMatricula.consultardesaprobados(idEstudiante);
+        
+        if(listaMaterias.isEmpty()){
+            this.jTextArea1.setText("No se encontraron registros.");
+        }
+        else{
+            for(String s: listaMaterias){
+                this.jTextArea1.append(s + " \n");           
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

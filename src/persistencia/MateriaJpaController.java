@@ -293,8 +293,8 @@ public class MateriaJpaController implements Serializable {
     // Consulta las materias que dicta un docente en una carrera determinada
     public List<String> consultarmateriasxdocxcar(String nombredocente, String nombrecarrera)
     {
-	String consulta = "SELECT m.nombremateria FROM materia m INNER JOIN m.docenteList d WHERE" +
-                            "d.nombredocente LIKE '%" + nombredocente +"%' AND" +
+	String consulta = "SELECT m.nombremateria FROM Materia m INNER JOIN m.docenteList d WHERE " +
+                            "d.nombredocente LIKE '%" + nombredocente +"%' AND " +
 				"m.numerocarrera.nombrecarrera LIKE '%" + nombrecarrera +"%'"; 
         
         Query query = this.getEntityManager().createQuery(consulta);
