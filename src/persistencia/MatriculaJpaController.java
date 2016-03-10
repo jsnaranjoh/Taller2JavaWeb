@@ -217,8 +217,8 @@ public class MatriculaJpaController implements Serializable {
     // Consulta las materias que el estudiante haya desaprobado
     public List<String> consultarDesaprobados(Long documentoestudiante)
     {
-        String consulta = "SELECT m.materia.nombremateria FROM Matricula m WHERE " + 
-                    "m.estudiante.documentoestudiante = " + documentoestudiante + " AND m.estado LIKE 'DES%'";
+        String consulta = "SELECT ma.numeromateria.nombremateria FROM Matricula ma WHERE " + 
+                    "ma.documentoestudiante.documentoestudiante = " + documentoestudiante + " AND ma.estado LIKE 'DES%'";
         
         Query query = this.getEntityManager().createQuery(consulta);
         return query.getResultList();
