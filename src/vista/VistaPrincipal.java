@@ -70,7 +70,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 511, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -81,11 +81,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                    .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 209, Short.MAX_VALUE)
+                        .addGap(0, 194, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -94,8 +94,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1))
-                        .addGap(0, 209, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(0, 194, Short.MAX_VALUE)))
+                .addGap(0, 0, 0))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
@@ -112,8 +112,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
@@ -123,11 +122,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         VistaEstudiante vistaEstudiante = new VistaEstudiante();
-        vistaEstudiante.setSize(425, 460);
-        vistaEstudiante.setLocation(0, 0);
+        vistaEstudiante.setSize(700, 500);
         
         panelPrincipal.removeAll();
-        panelPrincipal.add(vistaEstudiante, BorderLayout.CENTER);
+        panelPrincipal.add(vistaEstudiante);
         panelPrincipal.revalidate();
         panelPrincipal.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -135,10 +133,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         VistaMateria vistaMateria = new VistaMateria();
         vistaMateria.setSize(700, 500);
-        vistaMateria.setLocation(0, 0);
         
         panelPrincipal.removeAll();
-        panelPrincipal.add(vistaMateria, BorderLayout.CENTER);
+        panelPrincipal.add(vistaMateria);
         panelPrincipal.revalidate();
         panelPrincipal.repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -146,10 +143,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         VistaMatricula vistaMatricula = new VistaMatricula();
         vistaMatricula.setSize(700, 500);
-        vistaMatricula.setLocation(0, 0);
         
         panelPrincipal.removeAll();
-        panelPrincipal.add(vistaMatricula, BorderLayout.CENTER);
+        panelPrincipal.add(vistaMatricula);
         panelPrincipal.revalidate();
         panelPrincipal.repaint();
     }//GEN-LAST:event_jButton3ActionPerformed
