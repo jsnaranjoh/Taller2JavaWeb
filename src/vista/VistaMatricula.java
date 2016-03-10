@@ -502,6 +502,7 @@ public class VistaMatricula extends javax.swing.JPanel {
             this.jTextArea1.setText("No se encontraron registros.");
         }
         else{
+            this.jTextArea1.setText("");
             for(String s: listaMaterias){
                 this.jTextArea1.append(s + " \n");           
             }
@@ -515,6 +516,7 @@ public class VistaMatricula extends javax.swing.JPanel {
         String carrera = jTextField3.getText();
         Double promedio = controladorMatricula.promedioEstudiantesxCarrera(carrera);
         
+        this.jTextArea1.setText("");
         this.jTextArea1.setText(promedio.toString());
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -530,6 +532,7 @@ public class VistaMatricula extends javax.swing.JPanel {
             this.jTextArea1.setText("No se encontraron registros.");
         }
         else{
+            this.jTextArea1.setText("");
             for(String s: listaMaterias){
                 this.jTextArea1.append(s + " \n");           
             }
