@@ -203,6 +203,7 @@ public class VistaMatricula extends javax.swing.JPanel {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setFocusable(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton11.setText("Limpiar campos de consulta");
@@ -552,8 +553,8 @@ public class VistaMatricula extends javax.swing.JPanel {
     // Botón para consultar todas las materias que se dan en un semestre de una carrera determinada
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         
-        this.jTextField1.setText(" ");
-        this.jTextField3.setText(" ");
+        this.jTextField1.setText("");
+        this.jTextField3.setText("");
         
         MatriculaJpaController controladorMatricula = new MatriculaJpaController();
         Integer semestre = Integer.parseInt(jTextField6.getText());
