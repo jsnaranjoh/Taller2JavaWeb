@@ -425,10 +425,10 @@ public class VistaMateria extends javax.swing.JPanel {
         
         this.jTextArea1.setText("");
         MateriaJpaController controladorMateria = new MateriaJpaController();
-        String docente = jTextField5.getText();
-        String carrera = jTextField6.getText();
+        String nomDocente = jTextField5.getText();
+        String nomCarrera = jTextField6.getText();
         
-        List<String> listaMaterias = controladorMateria.consultarMateriasxDocxCarr(docente, carrera);
+        List<String> listaMaterias = controladorMateria.consultarMateriasxDocxCarr(nomDocente, nomCarrera);
 
         if(listaMaterias.isEmpty())
         {

@@ -535,12 +535,12 @@ public class VistaMatricula extends javax.swing.JPanel {
         this.jTextField7.setText("");
         
         MatriculaJpaController controladorMatricula = new MatriculaJpaController();
-        String carrera = jTextField3.getText();
-        Double promedio = controladorMatricula.promedioEstudiantesxCarrera(carrera);
+        String nomCarrera = jTextField3.getText();
+        Double promedio = controladorMatricula.promedioEstudiantesxCarrera(nomCarrera);
         
         try{
             this.jTextArea1.setText("");
-            this.jTextArea1.append("Promedio de notas de las materias de " + carrera + "\n\n");
+            this.jTextArea1.append("Promedio de notas de las materias de " + nomCarrera + "\n\n");
             this.jTextArea1.append(promedio.toString());            
         }
         catch(NullPointerException ex){
@@ -558,16 +558,16 @@ public class VistaMatricula extends javax.swing.JPanel {
         
         MatriculaJpaController controladorMatricula = new MatriculaJpaController();
         Integer semestre = Integer.parseInt(jTextField6.getText());
-        String carrera = jTextField7.getText();
+        String nomCarrera = jTextField7.getText();
         
-        List<String> listaMaterias = controladorMatricula.consultarMateriasxSemxCarr(semestre, carrera);
+        List<String> listaMaterias = controladorMatricula.consultarMateriasxSemxCarr(semestre, nomCarrera);
         
         if(listaMaterias.isEmpty()){
             this.jTextArea1.setText("No se encontraron registros.");
         }
         else{
             this.jTextArea1.setText("");
-            this.jTextArea1.append("Materias dadas en el semestre " + semestre + " de " + carrera + "\n\n");
+            this.jTextArea1.append("Materias dadas en el semestre " + semestre + " de " + nomCarrera + "\n\n");
             for(String s: listaMaterias){
                 this.jTextArea1.append(s + " \n");           
             }
