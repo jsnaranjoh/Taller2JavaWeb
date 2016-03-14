@@ -371,9 +371,13 @@ public class VistaMateria extends javax.swing.JPanel {
 
                 controladorMateria.destroy(numMateria);
                 JOptionPane.showMessageDialog(null, "Materia eliminada con éxito.");
-            } catch (NumberFormatException | IllegalOrphanException | NonexistentEntityException ex) {
+            } 
+            catch (NumberFormatException | NonexistentEntityException ex) {
                 JOptionPane.showMessageDialog(null, "Materia no existe.");
-            }            
+            }
+            catch (IllegalOrphanException ex){
+                JOptionPane.showMessageDialog(null, "Materia tiene matrículas asociadas.");
+            }
         }
         
         this.limpiar();
