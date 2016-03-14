@@ -538,15 +538,22 @@ public class VistaMatricula extends javax.swing.JPanel {
         String nomCarrera = jTextField3.getText();
         Double promedio = controladorMatricula.promedioEstudiantesxCarrera(nomCarrera);
         
-        try{
-            this.jTextArea1.setText("");
-            this.jTextArea1.append("Promedio de notas de las materias de " + nomCarrera + "\n\n");
-            this.jTextArea1.append(promedio.toString());            
-        }
-        catch(NullPointerException ex){
-            JOptionPane.showMessageDialog(jComboBox1, "Carrera no existe");
+        if(nomCarrera.isEmpty()){
+            JOptionPane.showMessageDialog(jComboBox1, "Campo Nombre carrera vacío.");
             this.jTextField3.setText("");
-            this.jTextArea1.setText("");
+            this.jTextArea1.setText("");            
+        }
+        else{
+            try{
+                this.jTextArea1.setText("");
+                this.jTextArea1.append("Promedio de notas de las materias de " + nomCarrera + "\n\n");
+                this.jTextArea1.append(promedio.toString());            
+            }
+            catch(NullPointerException ex){
+                JOptionPane.showMessageDialog(jComboBox1, "Carrera no existe o dicha Carrera no tiene materias inscritas.");
+                this.jTextField3.setText("");
+                this.jTextArea1.setText("");
+            }            
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -580,6 +587,7 @@ public class VistaMatricula extends javax.swing.JPanel {
         this.jTextField3.setText(" ");        
         this.jTextField6.setText(" ");
         this.jTextField7.setText(" ");
+        this.jTextArea1.setText(" ");
     }//GEN-LAST:event_jButton11ActionPerformed
 
 
