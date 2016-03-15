@@ -107,7 +107,7 @@ public class LogicaMateria {
     
     // Validación para consultar materia
     public Materia consultarMateria(Integer codigo) throws Exception{
-        if(codigo==null || codigo==0){
+        if(codigo == null || codigo == 0){
         throw new Exception("El código es Obligatorio.");
         }else{
             return materiaDAO.findMateria(codigo);
